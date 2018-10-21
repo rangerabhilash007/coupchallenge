@@ -2,10 +2,14 @@ package com.ranger.coupchallenge.model;
 
 import java.util.Arrays;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CoupRequest {
-	int[] scooters;
-	int managerCapacity;
-	int engineerCapacity;
+	private int[] scooters;
+	@JsonProperty("C")
+	private int managerCapacity;
+	@JsonProperty("P")
+	private int engineerCapacity;
 
 	public int[] getScooters() {
 		return scooters;

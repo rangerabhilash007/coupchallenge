@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class CoupResponse {
 	@JsonProperty("fleet_engineers")
-	int fleetEngineer;
+	private int fleetEngineer;
 
 	public CoupResponse(final int fleetEngineer) {
 		this.fleetEngineer = fleetEngineer;

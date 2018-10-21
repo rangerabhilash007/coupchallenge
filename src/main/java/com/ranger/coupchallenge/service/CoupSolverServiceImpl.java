@@ -5,6 +5,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class CoupSolverServiceImpl implements CoupSolverService {
 
+	/*
+	 * Validates whether []scooters will contain between 1 and 100 elements. C will
+	 * be between 1 and 999. P will be between 1 and 1000.
+	 */
 	void validateInput(final int[] scooters, final int managerCapacity, final int engineerCapacity) {
 		if (scooters.length < 1 || scooters.length > 100)
 			throw new IllegalArgumentException(
@@ -19,6 +23,9 @@ public class CoupSolverServiceImpl implements CoupSolverService {
 					"Invalid engineer capacity. Please provide engineer capacity value between 1 and 1000");
 	}
 
+	/*
+	 * Validates whether Each element in scooters will be between 0 and 1000.
+	 */
 	void validateScooterAmount(final int[] scooters, final int index) {
 		if (index >= scooters.length)
 			return;
@@ -36,6 +43,7 @@ public class CoupSolverServiceImpl implements CoupSolverService {
 		return scooters % engineerCapacity > 0 ? result + 1 : result;
 	}
 
+	// Solution to getting number of Fleet Engineers
 	@Override
 	public int solve(final int[] scooters, final int managerCapacity, final int engineerCapacity) {
 		validateInput(scooters, managerCapacity, engineerCapacity);
